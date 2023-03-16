@@ -16,11 +16,12 @@ function setup() {
 
 function draw() {
   background(220);
+  tileDraw()
 }
 
-function tileDrawJesper(){
+function tileDraw(){
   for (i=0;i>15;i++){
-    
+    image(tiles[i].sprite,0,0,i*width/4-2,i*height/4-2)
   }
 
 
