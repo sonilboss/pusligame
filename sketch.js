@@ -1,28 +1,25 @@
 let puzles
-let tiles=[]
+const tiles=[]
+let pictures =[]
 
 function preload (){
-  for (i=0;i<15;i++){
-  let puzles = loadImage("pictures/img"+i+".png")
-  let tile = new tile(img)
-  tiles.push(tile)
-
-}
+  for (let i=0;i<=15;i++){
+    for (let j=0;j<=15;j++){
+  let image = loadImage("pictures/img"+i+".png")
+  pictures.push(image)
+  tiles.push(new Tile(400 * i ,400 * j,random(pictures),windowWidth/4,windowHeight/4))
+    }
+  }
 }
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
   background(220);
-  tileDraw()
-}
 
-function tileDraw(){
-  for (i=0;i>15;i++){
-    image(tiles[i].sprite,0,0,i*width/4-2,i*height/4-2)
+  for (let Tile of tiles){
+    Tile.display();
   }
-
-
 }
